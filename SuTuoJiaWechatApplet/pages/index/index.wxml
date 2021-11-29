@@ -1,0 +1,169 @@
+<view class="flex row-between sort">
+    <view>
+        <!-- <view class="s-title">类型</view> -->
+        <view>
+            <picker bindchange="typeChange" value="{{tIndex}}" range="{{type}}">
+                <view class="flex column-center">
+                    <view class="picker">
+                        {{tIndex?type[tIndex]:'类型'}}
+                    </view>
+                    <text class="iconfont icon-xiajiantou d-arrow" selectable="false" space="false" decode="false">
+                    </text>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view>
+        <!-- <view class="s-title">地点</view> -->
+        <view>
+            <picker bindchange="collegeChange" value="{{cIndex}}" range="{{college}}">
+                <view class="flex column-center">
+                    <view class="picker">
+                        {{cIndex?college[cIndex]:'举办方'}}
+                    </view>
+                    <text class="iconfont icon-xiajiantou d-arrow" selectable="false" space="false" decode="false">
+                    </text>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view>
+        <!-- <view class="s-title">状态</view> -->
+        <view>
+            <picker bindchange="statusChange" value="{{sIndex}}" range="{{status}}">
+                <view class="flex column-center">
+                    <view class="picker">
+                        {{sIndex?status[sIndex]:'状态'}}
+                    </view>
+                    <text class="iconfont icon-xiajiantou d-arrow" selectable="false" space="false" decode="false">
+                    </text>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class='filter_Btn'>
+        <button bindtap="filter_all" size="mini">筛选</button>
+    </view>
+</view>
+
+<view class='activity_Box'>
+    <view class='activity' wx:for='{{activities}}' wx:key="index" wx:for-index="index" wx:for-item="activities" bindtap="toInfo" data-userid="{{activities.user_id}}" data-activityid="{{activities.activity_id}}" data-activitytitle="{{activities.activity_title}}" 
+    data-organizationname="{{activities.organization_name}}" data-activitytype="{{activities.activity_type}}" data-activitydetail="{{activities.activity_detail}}" data-orienteddepartment="{{activities.oriented_department}}" 
+    data-publishtime="{{activities.publish_time}}" data-partiddl="{{activities.parti_ddl}}" data-activitypost="{{activities.activity_post}}" data-status="{{activities.status}}">
+        <view class="u-info">
+            <view class="avatar">
+                <image class="img" src="../../img/userDefault.png" />
+            </view>
+            <view class="u-right">
+                <view>{{activities.organization_name}}</view>
+                <view class="time">
+                    <view>{{activities.publish_time}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="flex tags">
+            <view class="tag">
+                {{activities.activity_type}}
+            </view>
+            <view class="tag">
+                {{activities.oriented_department}}
+            </view>
+            <view class="tag">
+                {{activities.status}}
+            </view>
+        </view>
+        <view class="splitLine"></view>
+        <view class="a-bottom">
+            <view class="a-title">
+                {{activities.activity_title}}
+            </view>
+            <view class="a-content">
+                {{activities.activity_detail}}
+            </view>
+        </view>
+        <view class="flex" style="justify-content: center;">
+            <image src="{{activities.activity_post}}"></image>           
+        </view>
+        <button catchtap="toApply" data-activityid="{{activities.activity_id}}" data-status="{{activities.status}}">点击报名</button>
+    </view>
+</view>
+<!--
+<view class="activity" bindtap="toInfo" data-id="{{id}}">
+    <view class="u-info">
+        <view class="avatar">
+            <image class="img" src="../../img/userDefault.png" />
+        </view>
+        <view class="u-right">
+            <view>用户</view>
+            <view class="time">
+                <view>昨天12:30</view>
+            </view>
+        </view>
+    </view>
+    <view class="flex tags">
+        <view class="tag">
+            体育赛事
+        </view>
+        <view class="tag">
+            文理学部
+        </view>
+        <view class="tag">
+            未开始
+        </view>
+    </view>
+    <view class="splitLine"></view>
+    <view class="a-bottom">
+        <view class="a-title">
+            珞珈环跑
+        </view>
+        <view class="a-content">
+            周六早8点，珞珈山下见
+        </view>
+    </view>
+    <view class="flex" style="justify-content: flex-end;">
+        <image src='/img/index.png'></image>
+        
+    </view>
+    <view class="apply">
+            点击报名
+        </view>
+</view>
+<view class="activity">
+    <view class="u-info">
+        <view class="avatar">
+            <image class="img" src="../../img/userDefault.png" />
+        </view>
+        <view class="u-right">
+            <view>用户</view>
+            <view class="time">
+                <view>昨天12:30</view>
+            </view>
+        </view>
+    </view>
+    <view class="flex tags">
+        <view class="tag">
+            数学比赛
+        </view>
+        <view class="tag">
+            信息学部
+        </view>
+        <view class="tag">
+            未开始
+        </view>
+    </view>
+    <view class="splitLine"></view>
+    <view class="a-bottom">
+        <view class="a-title">
+            数学建模竞赛
+        </view>
+        <view class="a-content">
+            将于11月中旬进行初赛
+        </view>
+    </view>
+    <view class="flex" style="justify-content: flex-end;">
+        <view class="apply">
+            点击报名
+        </view>
+    </view>
+</view>
+-->

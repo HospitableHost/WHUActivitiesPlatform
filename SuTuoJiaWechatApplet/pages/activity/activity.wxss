@@ -1,0 +1,108 @@
+page {
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.a-info {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  width: 100%;
+  border-radius: 30rpx;
+  background-color: #fff;
+}
+
+.a-bottom {
+  position: relative;
+  width: 100%;
+}
+
+.a-title {
+  margin-bottom: 15rpx;
+  font-size: 46rpx;
+  font-weight: 600;
+}
+
+.a-content {
+  margin-bottom: 15rpx;
+  font-size: 28rpx;
+}
+
+.pillar {
+  margin-right: 15rpx;
+  width: 8rpx;
+  height: 34rpx;
+  background-color: #D28078;
+  border-radius: 4rpx;
+}
+
+.tag {
+  margin: 0 35rpx 0rpx 0;
+  padding: 6rpx 20rpx;
+  color: #fff;
+  background-color: #D28078;
+  border-radius: 15rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+
+.u-item {
+  margin-bottom: 35rpx;
+}
+
+.u-info {
+  display: flex;
+  margin-bottom: 20rpx;
+  align-items: center;
+  width: 100%;
+}
+
+.avatar {
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.u-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 90rpx;
+  font-size: 28rpx;
+}
+
+.r-top {
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+  height:50rpx;
+  font-size: 30rpx;
+}
+
+.time {
+  color: #888;
+  font-size: 28rpx;
+}
+
+.t-me {
+   display: flex;
+}
+
+.comment {
+  margin: 0rpx 20rpx 0 0;
+  background-color: #F2F2F2;
+  width: 78%;
+  padding: 10rpx 5rpx 10rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+.submit {
+  flex: 1;
+  height: 60rpx;
+  color: #fff;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #D28078;
+}

@@ -1,0 +1,107 @@
+<view class="container">
+    <!-- 顶部tab栏 -->
+    <view class="top">
+        <view bindtap="tapTab" class="top-tab {{currentTab == 0 ? 'current' : ''}}" data-cTab='0'>我发出的</view>
+        <view bindtap="tapTab" class="top-tab {{currentTab == 1 ? 'current' : ''}}" data-cTab='1'>回复我的</view>
+    </view>
+    <!-- 主体内容，随tab栏切换 -->
+    <view style="padding: 30rpx 30rpx 0 30rpx;">
+        <swiper current="{{currentTab}}" class="swiper" change="changeTab">
+            <swiper-item class="product-list">
+                <view class="comment_box"  wx:for='{{reply_comments}}' wx:key="index" wx:for-index="index" wx:for-item="reply_comments">
+                    <view class="flex c-row1">
+                        <view class="i-avatar" style="margin-right: 20rpx;">
+                            <image class="img" src="../../img/user.png" />
+                        </view>
+                        <view>
+                            回复：
+                        </view>
+                        <view style="flex:1;text-align: right;color: #333;" bindtap="deleteComment">
+                            删除
+                        </view>
+                    </view>
+                    <view class="c-row2">{{reply_comments.comment_content}}</view>
+                    <view class="c-row3">{{reply_comments.comment_time}}</view>
+                    <view class="r-row5"></view>
+                </view>
+                <!--
+                <view>
+                    <view class="flex c-row1">
+                        <view class="i-avatar" style="margin-right: 20rpx;">
+                            <image class="img" src="../../img/user.png" />
+                        </view>
+                        <view>
+                            回复：
+                        </view>
+                        <view style="flex:1;text-align: right;color: #333;" bindtap="deleteComment">
+                            删除
+                        </view>
+                    </view>
+                    <view class="c-row2">求队友！</view>
+                    <view class="c-row3">2021年10月5日</view>
+                    <view class="r-row5"></view>
+                </view>
+            -->
+            </swiper-item>
+            <swiper-item class="product-list" style="position: relative;">
+                <view class="flex"  wx:for='{{replied_comments}}' wx:key="index" wx:for-index="index" wx:for-item="replied_comments">
+                    <view class="i-avatar">
+                        <image class="img" src="../../img/user.png" />
+                    </view>
+                    <view style="flex:1;font-size: 32rpx;">
+                        <view class="flex row-between r-row1">
+                            <view style="color: #5C7492;">赵铁柱</view>
+                            <view style="color: #888;font-size: 28rpx;">9-30</view>
+                        </view>
+                        <view class="r-row2">
+                            回复我：我也同意😊
+                        </view>
+                        <view class="r-row3">
+                            我的评论：数据结构超简单！
+                        </view>
+                        <view class="r-row4" bindtap="reply" bindtap="switchShow">
+                            回复
+                        </view>
+                          
+                        <view class="r-row5">
+
+                        </view>
+                    </view>
+                </view>
+                <view class="flex">
+                    <view class="i-avatar">
+                        <image class="img" src="../../img/user.png" />
+                    </view>
+                    <view style="flex:1;font-size: 32rpx;">
+                        <view class="flex row-between r-row1">
+                            <view style="color: #5C7492;">陈胖胖</view>
+                            <view style="color: #888;font-size: 28rpx;">9-30</view>
+                        </view>
+                        <view class="r-row2">
+                            回复我：小学生？
+                        </view>
+                        <view class="r-row3">
+                            我的评论：JAVA天下第一！
+                        </view>
+                        <view class="r-row4" bindtap="reply">
+                            回复
+                        </view>
+                        <view class="r-row5">
+
+                        </view>
+                    </view>
+                </view>
+                <view class="reply" wx:if="{{isShow}}">
+                    <view class="u-info flex column-center" style="margin: 40rpx 0 15rpx 0;">
+                        <view class="comment">
+                            <input type="text" placeholder="回复赵铁柱：" style="width: 100%;"/>
+                        </view>
+                        <view class="submit ">
+                            提交
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

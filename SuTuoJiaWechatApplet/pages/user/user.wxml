@@ -1,0 +1,92 @@
+<view class="u-info">
+        <view class="avatar">
+            <image class="img" src="../../img/user.png"/>
+        </view>
+        <view class="u-right" >
+            <view style="font-size: 32rpx;">陶思晗</view>
+            <view class="flex" style="height: 100rpx;line-height: 100rpx;">
+                <view style="margin-right: 20rpx;">计算机学院</view>
+                <view>2018级</view>
+            </view>
+        </view>
+</view>
+<!-- 功能区 -->
+<view class="functions">
+    <view>
+        <view class="function" bindtap="toOrders" data-index="0">
+            <view class="f-left flex column-center">
+                <view class="l-icon">
+                    <text class="iconfont icon-geren" style="font-size: 44rpx;"></text>   
+                </view>
+                <span class="item-data">
+                    <i bindtap="modalinput">
+                <view>
+                    身份认证信息
+                </view>
+            </i>
+            </span>
+            </view>
+            <text class="f-right iconfont icon-youjiantou">
+            </text> 
+            <modal hidden="{{hiddenmodalput}}" title="身份认证" confirm-text="确认提交" cancel-text="取消认证" bindcancel="cancel" bindconfirm="confirm">
+ 
+                <view> <text style="color: #D28078">姓名：</text> <input type='text' bindinput="name" value="{{name_value}}" placeholder="例：陶思晗" auto-focus/></view>
+                 <view><text style="color: #D28078">性别：</text> <input type='text' bindinput="sex" value="{{sex_value}}" placeholder="例：女" auto-focus/></view>
+                 <view><text style="color: #D28078">学号：</text> <input type='text' bindinput="schoolid" value="{{schoolid_value}}" placeholder="例：2018302110252" auto-focus/></view>
+                 <view><text style="color: #D28078">年级：</text> <input type='text' bindinput="grade" value="{{grade_value}}" placeholder="例：2018" auto-focus/></view>
+                  <view><text style="color: #D28078">学院：</text> <input type='text' bindinput="school" value="{{school_value}}" placeholder="例：计算机学院" auto-focus/></view>
+                  <view><text style="color: #D28078">专业：</text> <input type='text' bindinput="major" value="{{major_value}}" placeholder="例：计算机科学与技术" auto-focus/></view>
+                  
+              </modal>
+        </view>
+       
+        <view class="function" bindtap="toComment" data-index="1">
+            <view class="f-left flex column-center">
+                <view class="l-icon">
+                    <text class="iconfont icon-31pinglun" style="font-size: 40rpx;"></text>   
+                </view>
+                <view>
+                    我的评论
+                </view>
+            </view>
+            <text class="f-right iconfont icon-youjiantou">
+            </text> 
+        </view>
+        <view class="function" bindtap="toMyActivity" data-index="2">
+            <view class="f-left flex column-center">
+                <view class="l-icon">
+                    <text class="iconfont icon-navicon-bmjl" style="font-size: 38rpx;"></text>   
+                </view>
+                <view>
+                    我的报名
+                </view>
+            </view>
+            <text class="f-right iconfont icon-youjiantou">
+            </text> 
+        </view>
+    
+        <view class="function" bindtap="toOrders" data-index="3">
+            <view class="f-left flex column-center">
+                <view class="l-icon">
+                    <text class="iconfont icon-kefu" style="font-size: 28rpx;"></text>   
+                </view>
+                <view bindtap='deleteCar' data-id='{{car.platecard}}'  class="icon">
+                    申请成为活动发布者
+                </view>
+            </view>
+            <text class="f-right iconfont icon-youjiantou">
+            </text> 
+            
+        </view>
+    </view>
+
+    </view>
+
+
+
+<!-- 退出登录 -->
+<view class="logout" bindtap="logout" wx:if="{{isLogin}}">
+    退出登录
+</view>
+
+  

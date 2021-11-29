@@ -1,0 +1,91 @@
+<view class="container">
+    <!-- 顶部tab栏 -->
+    <view class="top">
+        <view bindtap="tapTab" class="top-tab {{currentTab == 0 ? 'current' : ''}}" data-cTab='0'>正在报名</view>
+        <view bindtap="tapTab" class="top-tab {{currentTab == 1 ? 'current' : ''}}" data-cTab='1'>报名截止</view>
+    </view>
+    <!-- 主体内容，随tab栏切换 -->
+    <view style="padding: 30rpx 30rpx 0 30rpx;">
+        <swiper current="{{currentTab}}" class="swiper" change="changeTab">
+            <swiper-item class="product-list">
+                <view class="activity" bindtap="toInfo" wx:for='{{on_act}}' wx:key="index" wx:for-index="index" wx:for-item="on_act" bindtap="toInfo" data-userid="{{on_act.user_id}}" data-activityid="{{on_act.activity_id}}" data-activitytitle="{{on_act.activity_title}}" 
+                data-organizationname="{{on_act.organization_name}}" data-activitytype="{{on_act.activity_type}}" data-activitydetail="{{on_act.activity_detail}}" data-orienteddepartment="{{on_act.oriented_department}}" 
+                data-publishtime="{{on_act.publish_time}}" data-partiddl="{{on_act.parti_ddl}}" data-activitypost="{{on_act.activity_post}}" data-status="{{on_act.status}}">
+                    <view class="u-info">
+                        <view class="avatar">
+                            <image class="img" src="../../img/userDefault.png" />
+                        </view>
+                        <view class="u-right">
+                            <view>{{on_act.user_id}}</view>
+                            <view class="time">
+                                <view>{{on_act.parti_ddl}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flex tags">
+                        <view class="tag">
+                            {{on_act.activity_type}}
+                        </view>
+                        <view class="tag">
+                            {{on_act.oriented_department}}
+                        </view>
+                        <view class="tag">
+                            {{on_act.status}}
+                        </view>
+                    </view>
+                    <view class="splitLine"></view>
+                    <view class="a-bottom">
+                        <view class="a-title">
+                            {{on_act.activity_title}}
+                        </view>
+                        <view class="a-content">
+                            {{on_act.activity_detail}}
+                        </view>
+                    </view>
+                    <view class="flex" style="justify-content: flex-end;">
+                        <view class="apply">
+                            取消报名
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item class="product-list">
+                <view class="activity" bindtap="toInfo" wx:for='{{over_act}}' wx:key="index" wx:for-index="index" wx:for-item="over_act" bindtap="toInfo" data-userid="{{over_act.user_id}}" data-activityid="{{over_act.activity_id}}" data-activitytitle="{{over_act.activity_title}}" 
+                data-organizationname="{{over_act.organization_name}}" data-activitytype="{{over_act.activity_type}}" data-activitydetail="{{over_act.activity_detail}}" data-orienteddepartment="{{over_act.oriented_department}}" 
+                data-publishtime="{{over_act.publish_time}}" data-partiddl="{{over_act.parti_ddl}}" data-activitypost="{{over_act.activity_post}}" data-status="{{over_act.status}}">
+                    <view class="u-info">
+                        <view class="avatar">
+                            <image class="img" src="../../img/userDefault.png" />
+                        </view>
+                        <view class="u-right">
+                            <view>{{over_act.user_id}}</view>
+                            <view class="time">
+                                <view>{{over_act.parti_ddl}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flex tags">
+                        <view class="tag">
+                            {{over_act.activity_type}}
+                        </view>
+                        <view class="tag">
+                            {{over_act.oriented_department}}
+                        </view>
+                        <view class="tag">
+                            {{over_act.status}}
+                        </view>
+                    </view>
+                    <view class="splitLine"></view>
+                    <view class="a-bottom">
+                        <view class="a-title">
+                            {{over_act.activity_title}}
+                        </view>
+                        <view class="a-content" style="margin-bottom: 20rpx;">
+                            {{over_act.activity_detail}}
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

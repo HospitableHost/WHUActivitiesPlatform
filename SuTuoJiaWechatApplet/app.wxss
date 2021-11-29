@@ -1,0 +1,28 @@
+@import "colorui/icon.wxss";
+@import "colorui/main.wxss";
+@import "iconfont/iconfont.wxss";
+
+page {
+    position: relative;
+    width: 100%;
+  }
+  view {
+    box-sizing: border-box;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .row-between {
+    justify-content: space-between;
+  }
+  
+  .column-center {
+    align-items: center;
+  }
+  
+  .img {
+    width: 100% !important;
+    height: 100%;
+  }

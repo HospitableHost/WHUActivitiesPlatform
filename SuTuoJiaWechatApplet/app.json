@@ -1,0 +1,37 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/activity/activity",
+        "pages/comment/comment",
+        "pages/user/user",
+        "pages/myActivity/myActivity",
+        "pages/shenfen/shenfen"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#D28078",
+        "navigationBarTitleText": "素拓珈",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#666",
+        "selectedColor": "#666",
+        "borderStyle": "black",
+        "list": [
+            {
+                "selectedIconPath": "img/index.png",
+                "iconPath": "img/index.png",
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "selectedIconPath": "img/user.png",
+                "iconPath": "img/user.png",
+                "pagePath": "pages/user/user",
+                "text": "我的"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

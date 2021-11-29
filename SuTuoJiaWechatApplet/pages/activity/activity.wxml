@@ -1,0 +1,73 @@
+<!-- 基本信息 -->
+<view class="a-info" style="margin-top: 10rpx;">
+    <view class="a-bottom">
+        <view class="a-title">
+            {{activity_title}}
+        </view>
+        <view class="flex tags">
+            <view class="tag">
+                {{activity_type}}
+            </view>
+            <view class="tag">
+                {{oriented_department}}
+            </view>
+            <view class="tag">
+                {{status}}
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 详细信息 -->
+<view class="a-info">
+    <view class="flex column-center" style="height:60rpx;margin-bottom: 20rpx;">
+        <view class="pillar"></view>
+        <view>详细信息</view>
+    </view>
+    <view>
+        <view class="a-content">
+            <text>{{activity_detail}}</text>
+        </view>
+        <image src="{{activity_post}}"></image>
+    </view>
+</view>
+
+<!-- 评论区 -->
+<view class="a-info">
+    <view class="flex column-center" style="height:60rpx;margin-bottom: 20rpx;">
+        <view class="pillar"></view>
+        <view>评论区</view>
+    </view>
+    <view>
+        <view class="u-item" wx:for='{{comments}}' wx:key="index" wx:for-index="index" wx:for-item="comments">
+            <view class="u-info" bindtap="switchShow">
+                <view class="avatar">
+                    <image class="img" src="../../img/userDefault.png" />
+                </view>
+                <view class="u-right" >
+                    <view class="flex row-between r-top">
+                        <view>{{comments.user_id}}</view>
+                        <view class="time">{{comments.comment_time}}</view>
+                    </view>
+                    <view class="time">
+                        <view>{{comments.comment_content}}</view>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{isShow}}">
+                <view class="u-info flex column-center" style="justify-content: flex-end;">
+                    <view class="comment" style="width:85%;margin: 0;">
+                        <input type="text" placeholder="回复：" style="width: 100%;"/>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="u-info flex column-center" style="margin: 40rpx 0 15rpx 0;">
+            <view class="comment">
+                <input type="text" placeholder="点击输入评论" bindinput="new_com" value="{{new_com_value}}" style="width: 100%;"/>
+            </view>
+            <view class="submit " bindtap="submit">
+                提交
+            </view>
+        </view>
+    </view>
+</view>
